@@ -27,6 +27,9 @@ module.exports = (sequelize) => {
         comentario: {
             type: DataTypes.TEXT,
         },
+        fecha: {
+            type: DataTypes.DATE,
+        },
     },
     {timestamps: false}
     )
