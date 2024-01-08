@@ -29,6 +29,7 @@ module.exports = (sequelize) => {
         },
         fecha: {
             type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
         },
     },
     {timestamps: false}

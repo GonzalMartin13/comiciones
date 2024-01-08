@@ -30,9 +30,9 @@ const ventaID = async (id) =>{
     return venta
 }
 
-const crearPedido = async (id, descripcion, comentario, estado, precio) => {
+const crearPedido = async (ID, descripcion, comentario, estado, precio) => {
     const nuevaVenta = await Ventas.create({
-        id,
+        ID,
         descripcion,
         precio,
         estado,
@@ -41,4 +41,25 @@ const crearPedido = async (id, descripcion, comentario, estado, precio) => {
     return nuevaVenta
 }
 
-module.exports = {totales, ventaID, crearPedido}
+const todas = async(tipo) =>{
+    const todasVentas = await Ventas.findAll()
+
+    if (tipo === "Pendiente") {
+        const totalPendiente = todasVentas
+            .filter((venta) => venta.estado === "Pendiente")
+
+        return totalPendiente;
+    } else if (tipo === "Entregado") {
+        const totalEntregado = todasVentas
+            .filter((venta) => venta.estado === "Entregado")
+
+        return totalEntregado;
+    } else if (tipo === "Total") {
+        return todasVentas
+
+    } else {
+        return "Si no me decis que total queres que te devuelva no puedo hacer nada mi ciela"
+    }
+}
+
+module.exports = {totales, ventaID, crearPedido, todas}
