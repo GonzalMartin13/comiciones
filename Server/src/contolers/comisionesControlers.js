@@ -62,4 +62,34 @@ const todas = async(tipo) =>{
     }
 }
 
-module.exports = {totales, ventaID, crearPedido, todas}
+const modificacion = async(id) =>{
+    const ventaAModificar = await Ventas.findByPk(id)
+    if(ventaAModificar.estado === 'Entregado'){
+        ventaAModificar.estado = "Pendiente"
+        await ventaAModificar.save()
+        return `La venta ${id}, se ha marcado como entregada`
+    } else if ( ventaAModificar.estado === "Pendiente"){
+        ventaAModificar.estado = "Entregado"
+        await ventaAModificar.save()
+        return `La venta ${id}, se ha marcado como pendiente`
+    } else {
+        return "Tan dificil es poner un numero valido men?"
+    }
+    
+
+}
+
+const kill = async(id) =>{
+    const ventaMuerta = await Ventas.destroy({
+        where: {
+            ID: id
+        }
+    })
+    if (ventaMuerta === 1){
+    return `La venta ${id} ha sido eliminada de la world wide web`
+    } else {
+        return "No se encontro esa venta, tal vez sea porque no existe o porque sos hijo de primos"
+    }
+}
+
+module.exports = {totales, kill, ventaID, crearPedido, todas, modificacion}
