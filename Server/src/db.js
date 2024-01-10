@@ -9,17 +9,17 @@ const { DB_USER, DB_PASSWORD, DB_HOST,SECRET } = process.env;
 let sequelize; // Declara sequelize fuera del bloque try-catch
 
 try {
-/*   sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/comisiones`, {
+  sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/comisiones`, {
+    logging: false,
+    native: false,
+    dialectModule: pg,
+  }); 
+
+/*   sequelize = new Sequelize(SECRET, {
     logging: false,
     native: false,
     dialectModule: pg,
   }); */
-
-  sequelize = new Sequelize(SECRET, {
-    logging: false,
-    native: false,
-    dialectModule: pg,
-  });
 
   const basename = path.basename(__filename);
 

@@ -8,16 +8,16 @@ const totales = async(tipo) =>{
             .filter((venta) => venta.estado === "Pendiente")
             .reduce((sum, venta) => sum + venta.precio, 0);
 
-        return "total pendientes " + totalPendiente;
+        return "Tenes pendiente $" + totalPendiente;
     } else if (tipo === "Entregado") {
         const totalEntregado = todasVentas
             .filter((venta) => venta.estado === "Entregado")
             .reduce((sum, venta) => sum + venta.precio, 0);
 
-        return "total entregados" + totalEntregado;
+        return "Entregaste en total $" + totalEntregado;
     } else if (tipo === "Total") {
         const total = todasVentas.reduce((sum, venta) => sum + venta.precio, 0);
-        return "el todo es" + total;
+        return "En total vendiste $" + total + ", vas a cobrar $" + total*0.02;
 
     } else {
         return "Si no me decis que total queres que te devuelva no puedo hacer nada mi ciela"
@@ -38,7 +38,7 @@ const crearPedido = async (ID, descripcion, comentario, estado, precio) => {
         estado,
         comentario,
     })
-    return nuevaVenta
+    return "Sumaste una venta, bien wacho!"
 }
 
 const todas = async(tipo) =>{
