@@ -5,8 +5,8 @@ import './index.css'
 import {BrowserRouter} from "react-router-dom"
 import axios from 'axios'
 
-axios.defaults.baseURL = "http://localhost:3001/venta"
-/* axios.defaults.baseURL = "https://comiciones-production.up.railway.app/venta" */
+/* axios.defaults.baseURL = "http://localhost:3001/venta" */
+ axios.defaults.baseURL = "https://comiciones-production.up.railway.app/venta" 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
