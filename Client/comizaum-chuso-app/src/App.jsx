@@ -6,6 +6,7 @@ import HomePage from "./Compo/HomePahe/Homepage";
 import CrearVentaFormulario from "./Compo/Form/form";
 import ActualizarVentaFormulario from "./Compo/Actualizador/actualizardor/actulizar";
 import MataVentas from "./Compo/Asesino/mataVentas";
+import DetalleVenta from "./Compo/detail/detail";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
       <h1>COMIZAUM DEL CHUSO PA</h1>
       </div>
       <HomePage/> 
+      <h4>Checkeate la Venta</h4>
+      <DetalleVenta/>
       <h4>Entregaste algo? Modifica el estado</h4>
       <ActualizarVentaFormulario/> 
       <h4> Venta nueva? Aveeeeer 🤔</h4>

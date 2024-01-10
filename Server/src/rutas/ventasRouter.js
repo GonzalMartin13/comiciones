@@ -10,4 +10,4 @@ comisiones.put("/actualizar/:id", modificarHandler)
 comisiones.delete("/matar/:id", matarHandler)
 
 
-module.exports = comisiones
+module.exports = comisionesServer/src/rutas/ventasRouter.js
