@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./Compo/HomePahe/Homepage";
 import CrearVentaFormulario from "./Compo/Form/form";
 import ActualizarVentaFormulario from "./Compo/Actualizador/actualizardor/actulizar";
+import MataVentas from "./Compo/Asesino/mataVentas";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
       <ActualizarVentaFormulario/> 
       <h4> Venta nueva? Aveeeeer 🤔</h4>
       <CrearVentaFormulario/> 
-
+      <h4 className="bg-danger"> Queres eliminar una venta por que se la peinaste a alguien? 😱😱</h4>
+      <MataVentas/> 
 
     </>
   );
