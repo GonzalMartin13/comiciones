@@ -13,7 +13,7 @@ const DetalleVenta = () => {
 
     try {
       // Realizar la petición PUT con Axios
-      const {data} = await axios.put(`/venta/${idToUpdate}`, {
+      const {data} = await axios(`/venta/${idToUpdate}`, {
         // Puedes enviar cualquier otro dato adicional si es necesario
       });
 
