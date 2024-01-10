@@ -18,13 +18,13 @@ const DetalleVenta = () => {
       });
 
       // Mostrar la respuesta del endpoint
-      alert(data);
+      alert("Productos: " + data.descripcion + " Precio: " + data.precio + " Estado: " + data.estado);
 
       // Limpiar el campo
       setIdToUpdate('');
     } catch (error) {
       // Manejar errores de la petición
-      console.error('Error al actualizar la venta:', error.message);
+      console.error('Error al buscar la venta:', error.message);
       alert('Error al actualizar la venta. Por favor, inténtalo de nuevo.');
     }
     window.location.reload()
