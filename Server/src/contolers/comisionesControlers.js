@@ -14,10 +14,10 @@ const totales = async(tipo) =>{
             .filter((venta) => venta.estado === "Entregado")
             .reduce((sum, venta) => sum + venta.precio, 0);
 
-        return "Entregaste en total $" + totalEntregado;
+        return "Entregaste en total $" + totalEntregado +" cobrarias $" + totalEntregado*0.02;
     } else if (tipo === "Total") {
         const total = todasVentas.reduce((sum, venta) => sum + venta.precio, 0);
-        return "En total vendiste $" + total + ", vas a cobrar $" + total*0.02;
+        return "En total vendiste $" + total 
 
     } else {
         return "Si no me decis que total queres que te devuelva no puedo hacer nada mi ciela"
