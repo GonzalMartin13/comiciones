@@ -67,11 +67,11 @@ const modificacion = async(id) =>{
     if(ventaAModificar.estado === 'Entregado'){
         ventaAModificar.estado = "Pendiente"
         await ventaAModificar.save()
-        return `La venta ${id}, se ha marcado como entregada`
+        return `La venta ${id}, se ha marcado como Pendente`
     } else if ( ventaAModificar.estado === "Pendiente"){
         ventaAModificar.estado = "Entregado"
         await ventaAModificar.save()
-        return `La venta ${id}, se ha marcado como pendiente`
+        return `La venta ${id}, se ha marcado como entangada`
     } else {
         return "Tan dificil es poner un numero valido men?"
     }

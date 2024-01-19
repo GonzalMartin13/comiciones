@@ -16,18 +16,19 @@ const DetalleVenta = () => {
       const {data} = await axios(`/venta/${idToUpdate}`, {
         // Puedes enviar cualquier otro dato adicional si es necesario
       });
-
+      console.log(data)
       // Mostrar la respuesta del endpoint
-      alert("Productos: " + data.descripcion + " Precio: " + data.precio + " Estado: " + data.estado);
+      alert(`Venta numero ${data.ID} \n Estado de la venta ${data.estado} \n El total e ${data.precio} \n y vendistes ${data.descripcion}` );
+
 
       // Limpiar el campo
       setIdToUpdate('');
     } catch (error) {
       // Manejar errores de la petición
       console.error('Error al buscar la venta:', error.message);
-      alert('Error al actualizar la venta. Por favor, inténtalo de nuevo.');
+      alert('Error');
     }
-    window.location.reload()
+   /*  window.location.reload() */
   };
 
   return (
